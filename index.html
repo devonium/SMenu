@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<head>
+    <script type="text/javascript" src="/___vscode_livepreview_injected_script"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SMenu</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/start_page.css">
+    <link rel="stylesheet" href="css/smenu_window.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kode+Mono&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <script src="js/cfgmenu.js"></script>
+    <script src="js/main.js"></script>
+    <div id="startWindow" onclick="startWindowClick()" style="  
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width:100%;
+            max-height:100%;
+            margin:auto;
+            position:absolute;
+            top:0;bottom:0;
+            left:0;right:0;
+            cursor: pointer;
+            ">
+        <ul class="startButtonList">
+            <li style="transform: translate(0px, 0px);"><text class="startButton unselectable">+</text></li>
+            <li style="transform: translate(0px, -35px);"><text class="startButtonTooltip unselectable">Click or drop a
+                    smenu file to start</text></li>
+        </ul>
+    </div>
+
+    <div id="smenuEditWindow" class="smenuWindow">
+        <ul style="list-style-type: none; margin: 0; padding: 0;">
+            <li style="width: 100vw;">
+                <div class="smenuWindowTabs">
+                    <button class="smenuWindowTabButton" onclick="loadExample()" style="min-width: 20px;">E</button>
+                    <button class="smenuWindowTabButton" onclick="saveCFG()" style="min-width: 200px;">Export
+                        CFG</button>
+                    <button class="smenuWindowTabButton" onclick="saveSMENU()" style="min-width: 200px;">Export
+                        smenu</button>
+                    <button class="smenuWindowTabButton" onclick="smenuCreateNewMenu()">＋</button>
+                    <div id="smenuWindowTabs" class="smenuWindowTabs"></div>
+                </div>
+            </li>
+            <li id="smenuWindowTabsWindow" style="height: 100%;"></li>
+        </ul>
+    </div>
+
+    <div class="keyboard" id="KeyboardMenu">
+        <div class="keyboardRow">
+            <span class="keyDisabled" style="font-size: 12px;cursor:not-allowed;">Esc</span>
+            <span style="font-size: 12px;" class="key">F1</span>
+            <span style="font-size: 12px;" class="key">F2</span>
+            <span style="font-size: 12px;" class="key">F3</span>
+            <span style="font-size: 12px;" class="key">F4</span>
+            <span style="font-size: 12px;margin-left: 50px;" class="key">F5</span>
+            <span style="font-size: 12px;" class="key">F6</span>
+            <span style="font-size: 12px;" class="key">F7</span>
+            <span style="font-size: 12px;" class="key">F8</span>
+            <span style="font-size: 12px;margin-left: 50px;" class="key">F9</span>
+            <span style="font-size: 12px;" class="key">F10</span>
+            <span style="font-size: 12px" class="key">F12</span>
+            <span class="keyDisabled" ovkey="" style="font-size: 12px;width:52px;">Prt</span>
+            <span class="key" ovkey="scrolllock" style="font-size: 12px;width:52px;">Lock</span>
+            <span class="key" ovkey="pause" style="font-size: 12px;width:52px;">Pause</span>
+        </div>
+
+        <div class="keyboardRow">
+            <span class="keyDisabled" style="cursor: not-allowed;">~</span>
+            <span class="keyDisabled">1</span>
+            <span class="keyDisabled">2</span>
+            <span class="keyDisabled">3</span>
+            <span class="keyDisabled">4</span>
+            <span class="keyDisabled">5</span>
+            <span class="keyDisabled">6</span>
+            <span class="keyDisabled">7</span>
+            <span class="keyDisabled">8</span>
+            <span class="keyDisabled">9</span>
+            <span class="keyDisabled">0</span>
+            <span class="keyDisabled">-</span>
+            <span class="keyDisabled">+</span>
+            <span class="key" ovkey="backspace" style="padding-right: 50px;width: 62px;">←</span>
+            <span class="key" style="width:52px">Ins</span>
+            <span class="key" style="width:52px;">Home</span>
+            <span class="key" ovkey="pgup" style="width:52px;"">Up</span>
+            <span class="key" ovkey="numlock"
+                style="width:52px;margin-left: 5px;">Lock</span>
+            <span class="key" ovkey="kp_slash" style="width:52px;">/</span>
+            <span class="key" ovkey="kp_multiply" style="width:52px;">*</span>
+            <span class="key" ovkey="kp_minus" style="width:52px;">-</span>
+        </div>
+
+        <div class="keyboardRow">
+            <span class="key">Tab</span>
+            <span class="key">Q</span>
+            <span class="key">W</span>
+            <span class="key">E</span>
+            <span class="key">R</span>
+            <span class="key">T</span>
+            <span class="key">Y</span>
+            <span class="key">U</span>
+            <span class="key">I</span>
+            <span class="key">O</span>
+            <span class="key">P</span>
+            <span class="key">[</span>
+            <span class="key">]</span>
+            <span class="key" style="width: 80px;">\</span>
+            <span class="key" style="width:52px;">Del</span>
+            <span class="key" style="width:52px;">End</span>
+            <span class="key" ovkey="pgdn" style="width:52px;">Down</span>
+            <span class="key" ovkey="kp_home"
+                style="width:52px;margin-left: 5px;">7</span>
+            <span class="key" ovkey="kp_uparrow" style="width:52px;">8</span>
+            <span class="key" ovkey="kp_pgup" style="width:52px;">9</span>
+            <span class="key" ovkey="kp_plus" style="width:52px;">+</span>
+
+        </div>
+
+        <div class="keyboardRow">
+            <span ovkey="capslock" class="key">Caps Lock</span>
+            <span class="key">A</span>
+            <span class="key">S</span>
+            <span class="key">D</span>
+            <span class="key">F</span>
+            <span class="key">G</span>
+            <span class="key">H</span>
+            <span class="key">J</span>
+            <span class="key">K</span>
+            <span class="key">L</span>
+            <span ovkey="semicolon" class="key">;</span>
+            <span class="key">'</span>
+            <span class="key" style="width:52px;">Enter</span>
+            <span class="keyDisabled"
+                style="width:52px;opacity: 0;cursor:default;">Down</span>
+            <span class="keyDisabled"
+                style="width:52px;opacity: 0;cursor:default">Down</span>
+            <span class="keyDisabled"
+                style="width:52px;opacity: 0;cursor:default">Down</span>
+            <span class="key" ovkey="kp_leftarrow"
+                style="width:52px;margin-left: 5px;">4</span>
+            <span class="key" ovkey="kp_5" style="width:52px;">5</span>
+            <span class="key" ovkey="kp_rightarrow" style="width:52px;">6</span>
+            <span class="key" ovkey="kp_enter" style="width:52px;">Enter</span>
+
+        </div>
+
+        <div class="keyboardRow">
+            <span class="key" style="padding-right: 70px;">Shift</span>
+            <span class="key">Z</span>
+            <span class="key">X</span>
+            <span class="key">C</span>
+            <span class="key">V</span>
+            <span class="key">B</span>
+            <span class="key">N</span>
+            <span class="key">M</span>
+            <span class="key">,</span>
+            <span class="key">.</span>
+            <span class="key">/</span>
+            <span class="key" ovkey="rshift" style="width: 72px;">Shift</span>
+            <span class="keyDisabled"
+                style="width:52px;opacity: 0;cursor:default;">Down</span>
+            <span class="key" ovkey="uparrow" style="width:52px;">⇧</span>
+            <span class="keyDisabled"
+                style="width:52px;opacity: 0;cursor:default">Down</span>
+            <span class="key" ovkey="kp_end"
+                style="width:52px;margin-left: 5px;">1</span>
+            <span class="key" ovkey="kp_downarrow" style="width:52px;">2</span>
+            <span class="key" ovkey="kp_pgdn" style="width:52px;">3</span>
+            <span class="keyDisabled"
+                style="width:52px;cursor: default;color: transparent;">.</span>
+        </div>
+
+        <div class="keyboardRow">
+            <span class="key">Ctrl</span>
+            <span ovkey = "lwin" class="key">Win</span>
+            <span class="key">Alt</span>
+            <span class="key" style="width: 212px;">Space</span>
+            <span ovkey="ralt" class="key">Alt</span> 
+            <span ovkey = "rwin" class="key">Win</span>
+            <span class="key" ovkey="rctrl" style="width: 39px;">Ctrl</span>
+            <span class="key" ovkey="rightarrow" style="width:52px;">⇦</span>
+            <span class="key" ovkey="downarrow" style ="width:52px;">⇩</span>
+            <span class="key" ovkey="leftarrow" style ="width:52px;">⇨</span>
+            <span class="key" ovkey="kp_ins"
+                style="width:52px;margin-left: 5px;">0</span>
+            <span class="key" ovkey="kp_del" style="width:52px;">.</span>
+            <span class="keyDisabled"
+                style="width:52px;cursor: default;color: transparent;">.</span>
+            <span class="key" style="width:52px;">None</span>
+        </div>
+
+        <div class="keyboardRow"> <span class="keyDisabled" style="opacity: 0;">M1</span> </div>
+
+        <div class="keyboardRow">
+            <span class="key" ovkey="mouse1" style="width: 120px; ">Left click</span>
+            <span class="key" ovkey="mwheelup" style="width: 120px; ">Wheel up</span>
+            <span class="key" ovkey="mouse2" style="width: 120px; ">Right click</span>
+        </div>
+
+        <div class="keyboardRow">
+            <span class="key" ovkey="mouse5" style="width: 120px; ">M5</span>
+            <span class="key" ovkey="mouse3" style="width: 120px; ">Wheel click</span>
+        </div>
+
+        <div class="keyboardRow">
+            <span class="key" ovkey="mouse4" style="width: 120px; ">M4</span>
+            <span class="key" ovkey="mwheeldown" style="width: 120px; ">Wheel down</span>
+        </div>
+    </div>
+</body>
+</html>

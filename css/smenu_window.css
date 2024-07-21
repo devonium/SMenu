@@ -1,0 +1,162 @@
+.smenuWindow { 
+    display: flex;
+    background-color: #1E1E1E;
+
+    max-width:100%;
+    max-height:100%;
+    border-radius: 0px;
+    margin:auto;
+    position:absolute;
+    
+    left:0;right:0;
+    overflow: hidden;
+    top:0%;bottom:0;
+    
+    visibility: hidden;
+    top:200%;bottom:0;
+    user-select: none;
+}
+
+.smenuWindowTabs { 
+    width: 100%;
+    height: 52px;
+    display: flex;
+    list-style-type: none;
+    background-color: #282828;
+    overflow: hidden;
+    scrollbar-color: rgb(172, 172, 172) rgba(0, 0, 0, 0);
+    scrollbar-width:thin;
+}
+
+.smenuWindowTab,.smenuWindowTabButton,.smenuWindowTabActive { 
+    font-family: var(--font-main);
+    font-size: 18px;
+    
+    color: rgb(202, 202, 202);
+    background-color: #363636;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+}
+
+.smenuWindowTabWindow { 
+    position:absolute;
+    
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+}
+
+.smenuWindowTab { 
+    border-bottom:1px solid rgb(22, 22, 22);
+}
+
+.smenuWindowTabButton { 
+    border-bottom:1px solid #ffffff;
+}
+
+.smenuWindowTab:hover,.smenuWindowTabButton:hover  { 
+    transition: 0.2s;
+    background-color: #2c2c2c;
+}
+
+.smenuWindowTabActive  { 
+    border-bottom:1px solid rgb(70, 165, 139, 1);
+}
+
+.smenuWindowTextInput  { 
+    transform: translateX(5px);
+    position: relative;
+    display: inline-block;
+    border-radius: 5px;
+    border-bottom: 2px dotted cadetblue;
+    background-color: #2c2c2c;
+    
+    border: none;
+    font-family: var(--font-main);
+    font-size: 18px;
+    color: rgb(127, 255, 212, 0.6);
+}
+
+.smenuCommandWindow
+{
+    border: none;
+    background-color: #282828; /* Green */
+    transition-duration: 0.4s;
+    border-radius: 5px;
+    margin: 5px 30px 0px 30px;
+    z-index: 1;
+}
+
+.smenuButton
+{
+    font-family: var(--font-main);
+    font-size: 18px;
+    border: none;
+    color: rgb(70, 165, 139, 1);
+    background-color: transparent; /* Green */
+    transition-duration: 0.4s;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.smenuInput
+{
+    font-family: var(--font-main);
+    font-size: 18px;
+    border:none;
+    border-radius: 5px;
+    color: rgb(202, 202, 202);
+    background-color: #363636; /* Green */
+    transition-duration: 0.4s;
+}
+
+.smenuButton:hover {
+    text-shadow: 0 0 5px rgb(127, 255, 212, 1);
+}
+
+.tooltip {
+    transform: translateX(5px);
+    position: relative;
+    display: inline-block;
+    border-bottom: 2px dotted cadetblue;
+    
+    font-family: var(--font-main);
+    font-size: 18px;
+    color: rgb(202, 202, 202);   
+}
+  
+.tooltip .tooltiptext {
+    
+    font-family: var(--font-main);
+    font-size: 18px;
+    color: rgb(202, 202, 202);
+    
+    visibility: hidden;
+    background-color: transparent;
+    color: #fff;
+    text-align: center;
+    width: 300px;
+    border-radius: 5px;
+    border: solid;
+    border-color: cadetblue;
+    border-width: 1.5px; 
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 2;
+    top: 100%;
+    left: 100%;
+    margin-left: -0px;
+}
+
+.tooltip:hover .tooltiptext {
+visibility: visible;
+}
+  
