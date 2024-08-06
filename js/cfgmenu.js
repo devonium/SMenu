@@ -3,6 +3,7 @@ function saveCFG() {
     let cfg =
         `
 alias smenu_restore_19 "bind 1 slot1;bind 2 slot2;bind 3 slot3;bind 4 slot4;bind 5 slot5;bind 7 slot7;bind 8 slot8;bind 9 slot9; bind 0 slot10;bind - disguiseteam; bind = smenu_donothing"
+smenu_restore_19
 alias smenu_donothing ""
 alias smenu_overrideEx "bind 0 smenu_prev;bind - smenu_next; bind = smenu_close;"
 alias smenu_override   "bind 4 smenu_prev;bind 5 smenu_next; bind 6 smenu_close;"

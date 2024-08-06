@@ -183,7 +183,7 @@ function smenuCreateNewMenu(name, ext, key) {
 
     let image = document.createElement("img");
     image.className = "tooltiptext";
-    image.src = "https://cdn.discordapp.com/attachments/1046784782194974771/1264619448468504668/krita_mwjE38Gic3.png?ex=669e8824&is=669d36a4&hm=2162e7c6836c0cecd61a74c0decfd778fcabbb5b031e28f1f25b11052fa07f06&";
+    image.src = "images/ext_menu.png";
     label.append(image);
     topBar.append(label);
     list.appendChild(topBar);
